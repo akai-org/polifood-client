@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactStars from 'react-stars';
-import './PlaceDescription.scss'
+import './PlaceDescription.scss';
 
 export default function PlaceDescription (props) {
   return (
@@ -23,5 +23,5 @@ export default function PlaceDescription (props) {
           {props.description}
         </p>
       </div>
-  )
+  );
 }
