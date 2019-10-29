@@ -11,3 +11,8 @@ body {
   font-family: "Montserrat", sans-serif;
   color: $mainFont;
 }
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
