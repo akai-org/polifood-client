@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5b5b5b;
+        opacity: 0.9;
+      }
+    </style>
+  </defs>
+  <path id="iconmonstr-menu-4" class="cls-1" d="M28.5,16.5H7.5v-3h21Zm0,3H7.5v3h21Zm0,6H7.5v3h21ZM33,9V33H3V9Zm3-9H0V36H36Z"/>
+</svg>
