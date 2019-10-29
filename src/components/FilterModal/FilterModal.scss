@@ -22,14 +22,15 @@
         position: absolute;
         top: 0;
         left: 0;
-        transform: translateY(-100%);
-        background-color: rgba(0,0,0,0.4);
-        z-index: 1000;
-        transition: transform .3s .2s ease-in;
+        background-color: rgb(0,0,0);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity .3s 0.001s ease-in, z-index 0.001s linear;
     }
 
     &__bg--visible {
-        transform: translateY(0%);
+        z-index: 1000;
+        opacity: 0.4;
     }
 
     &__header {
@@ -53,7 +54,7 @@
                 color: $white;
                 border-radius: 16px;
                 font-size: 18px;
-                transition: all 0.2s linear;
+                transition: all 0.1s linear;
     
                 &--selected {
                     opacity: 1;
