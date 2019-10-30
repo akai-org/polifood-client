@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FilterModal.scss';
 
+import OptionsItem from './OptionsItem';
+
+const initialCategories = [
+  { title: 'cheap', ifSelected: false },
+  { title: 'healthy', ifSelected: false },
+  { title: 'vege', ifSelected: false },
+  { title: 'takeaway', ifSelected: false },
+  { title: 'fast', ifSelected: false }
+];
+
 const FilterModal = ({ modalData }) => {
+  const [categories, setCategories] = useState(initialCategories);
+  // temporary helper function
+  const selectHandler = title => {
+    setCategories(state =>
+      state.map(item => {
+        if (item.title === title) {
+          return { ...item, ifSelected: !item.ifSelected };
+        } else return item;
+      })
+    );
+  };
+
   return (
     <>
       <div
-        className={`filters__bg ${
-          modalData.isVisible ? 'filters__bg--visible' : ''
+        className={`filters__bg${
+          modalData.isVisible ? ' filters__bg--visible' : ''
         }`}
       ></div>
       <div
@@ -15,12 +37,14 @@ const FilterModal = ({ modalData }) => {
         <h1 className="filters__header">Filters</h1>
         <div className="filters__options">
           {/* TODO: create new component: options-item with filter section's state handlers */}
-          <span className="options-item options-item--selected">Cheap</span>
-          <span className="options-item">Healthy</span>
-          <span className="options-item">Vege</span>
-          <span className="options-item options-item--selected">Takeaway</span>
-          <span className="options-item">Fast</span>
-          <span className="options-item">Healthy</span>
+          {categories.map(category => (
+            <OptionsItem
+              key={category.title}
+              itemValue={category.title}
+              ifSelected={category.ifSelected}
+              selectHandler={() => selectHandler(category.title)}
+            />
+          ))}
         </div>
         <div className="filters__selects"></div>
         <button
