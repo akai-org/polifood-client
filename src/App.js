@@ -1,10 +1,21 @@
-import React from "react";
-import "./App.scss";
+import React, { useState } from 'react';
+import './App.scss';
+import MainMap from './components/Map/MainMap';
+import NavBar from './components/NavBar/NavBar';
+import SearchBar from './components/SearchBar/SearchBar';
+import FilterModal from './components/FilterModal/FilterModal';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+    setIsModalOpen(s => !s);
+  };
   return (
     <div className="App">
-      <h1>Polifood</h1>
+      <MainMap />
+      <SearchBar toggleModal={toggleModal} />
+      <NavBar />
+      <FilterModal modalData={{ isVisible: isModalOpen, toggleModal }} />
     </div>
   );
 }
