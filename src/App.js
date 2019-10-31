@@ -7,7 +7,7 @@ import {
 
 import './App.scss';
 import MapPage from './pages/MapPage';
-import RestaurantPageInfo from './pages/RestaurantPageInfo';
+import RestaurantPageInfo from './pages/RestaurantPageInfo/RestaurantPageInfo';
 import NavBar from './components/NavBar/NavBar';
 
 export default function App() {
