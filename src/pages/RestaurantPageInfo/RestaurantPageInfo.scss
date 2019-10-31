@@ -3,11 +3,16 @@
   z-index: -1;
 }
 
-.contentt {
+.restaurant-info-content {
   background-color: white;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 40px;
+  border-radius: 20px 20px 0 0;
   border: 1px solid #BBBBBB;
   position: relative;
   top: -20px;
+  min-height: 100vh;
+
+  & > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
