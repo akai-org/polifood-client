@@ -4,16 +4,14 @@
   left: 20px;
   border: 1px solid #DDDDDD;
   border-radius: 100%;
-  background-color: white;
+  background-color: #ffffff;
 
   width: 35px;
   height: 35px;
-  padding: 10px;
-
-  display: flex;
-  
 }
 
 .button-image {
-  
+  width: inherit;
+  position: relative;
+  padding: 10px;
 }
