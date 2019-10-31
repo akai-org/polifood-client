@@ -16,6 +16,7 @@ export default function PlaceDescription (props) {
           half={false}
           edit={false}
           value={props.rating}
+          color1={'#BFBFBF'}
           color2={'#ffcc61'}
         />
 
