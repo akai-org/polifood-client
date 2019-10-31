@@ -3,6 +3,7 @@ import PlaceDescription from '../../components/PlaceDescription/PlaceDescription
 import OpeningHours from '../../components/OpeningHours/OpeningHours';
 import RestaurantPicture from '../../assets/images/restaurant.jpg';
 import './RestaurantPageInfo.scss';
+import BackButton from '../../components/BackButton/BackButton';
 
 export default function RestaurantInfoPage() {
   return (
@@ -24,8 +25,9 @@ export default function RestaurantInfoPage() {
         <div className="comments">
           <h3>Komentarze</h3>
         </div>
-        
       </div>
+      
+      <BackButton />
     </div>
   );
 }
