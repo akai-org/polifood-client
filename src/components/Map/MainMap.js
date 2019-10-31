@@ -14,11 +14,12 @@ export const customIcon = new L.Icon({
   shadowAnchor: [20, 92]
 });
 
-const MainMap = props => {
+const MainMap = ({ currentGeolocation }) => {
   const [position] = useState([52.399377, 16.950109]);
-
+  const mapPosition =
+    currentGeolocation.length !== 0 ? currentGeolocation : position;
   return (
-    <Map center={position} zoom={16} zoomControl={false}>
+    <Map center={mapPosition} zoom={16} zoomControl={false}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={position} icon={customIcon}>
         <Popup>
