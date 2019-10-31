@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import './App.scss';
-import MainMap from './components/Map/MainMap';
-import NavBar from './components/NavBar/NavBar';
-import SearchBar from './components/SearchBar/SearchBar';
-import FilterModal from './components/FilterModal/FilterModal';
+import React from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
 
-function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => {
-    setIsModalOpen(s => !s);
-  };
+import './App.scss';
+import MapPage from './pages/MapPage';
+import RestaurantPageInfo from './pages/RestaurantPageInfo';
+import NavBar from './components/NavBar/NavBar';
+
+export default function App() {
   return (
-    <div className="App">
-      <MainMap />
-      <SearchBar toggleModal={toggleModal} />
-      <NavBar />
-      <FilterModal modalData={{ isVisible: isModalOpen, toggleModal }} />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Switch>
+          <Route path="/restaurant-info" component={RestaurantPageInfo} />
+          <Route path="/" component={MapPage} />
+        </Switch>
+        <NavBar />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
