@@ -32,7 +32,7 @@ const FilterModal = ({ modalData }) => {
         }`}
       ></div>
       <div
-        className={`filters ${modalData.isVisible ? 'filters--visible' : ''}`}
+        className={`filters${modalData.isVisible ? ' filters--visible' : ''}`}
       >
         <h1 className="filters__header">Filters</h1>
         <div className="filters__options">
