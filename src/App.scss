@@ -1,9 +1,10 @@
 @import './assets/styles/colors';
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
