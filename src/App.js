@@ -5,11 +5,13 @@ import NavBar from './components/NavBar/NavBar';
 import SearchBar from './components/SearchBar/SearchBar';
 import FilterModal from './components/FilterModal/FilterModal';
 
-function App() {
+const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const toggleModal = () => {
     setIsModalOpen(s => !s);
   };
+
   return (
     <div className="App">
       <MainMap />
@@ -18,6 +20,6 @@ function App() {
       <FilterModal modalData={{ isVisible: isModalOpen, toggleModal }} />
     </div>
   );
-}
+};
 
 export default App;

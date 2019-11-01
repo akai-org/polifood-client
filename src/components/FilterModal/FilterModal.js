@@ -12,6 +12,9 @@ const initialCategories = [
 ];
 
 const FilterModal = ({ modalData }) => {
+  // destructuring prop
+  const { isVisible, toggleModal } = modalData;
+  // categories will be fetched from API
   const [categories, setCategories] = useState(initialCategories);
   // temporary helper function
   const selectHandler = title => {
@@ -23,20 +26,20 @@ const FilterModal = ({ modalData }) => {
       })
     );
   };
+  // generate classes based on prop
+  const bgClasses = ['filters__bg', isVisible && 'filters__bg--visible'].filter(
+    item => item
+  );
+  const filtersClasses = ['filters', isVisible && 'filters--visible'].filter(
+    item => item
+  );
 
   return (
     <>
-      <div
-        className={`filters__bg${
-          modalData.isVisible ? ' filters__bg--visible' : ''
-        }`}
-      ></div>
-      <div
-        className={`filters ${modalData.isVisible ? 'filters--visible' : ''}`}
-      >
+      <div className={bgClasses.join(' ')}></div>
+      <div className={filtersClasses.join(' ')}>
         <h1 className="filters__header">Filters</h1>
         <div className="filters__options">
-          {/* TODO: create new component: options-item with filter section's state handlers */}
           {categories.map(category => (
             <OptionsItem
               key={category.title}
@@ -47,11 +50,7 @@ const FilterModal = ({ modalData }) => {
           ))}
         </div>
         <div className="filters__selects"></div>
-        <button
-          type="button"
-          className="filters__btn"
-          onTouchEnd={modalData.toggleModal}
-        >
+        <button type="button" className="filters__btn" onTouchEnd={toggleModal}>
           Apply Filters
         </button>
       </div>

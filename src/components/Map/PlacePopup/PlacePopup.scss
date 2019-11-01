@@ -1,0 +1,40 @@
+@import '../../../assets/styles/colors';
+
+.place-popup{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 80px);
+    z-index: 2000;
+    background-color: $accent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1.2em 1.4em;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.25);
+    transition: all .2s ease-in-out;
+
+    &--active {
+        transform: translate(-50%, -100px);
+    }
+
+    &__content {
+        color: $white;
+        font-size: 16px;
+        line-height: 19px;
+
+        .place-name {
+            font-weight: bold;
+        }
+    }
+
+    &__btn {
+        width: 10px;
+        height: 16px;
+    }
+}
