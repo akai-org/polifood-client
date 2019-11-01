@@ -27,30 +27,39 @@ const dummyMarkers = [
 ];
 
 const initialPopup = {
-  id: 'abcd',
-  name: 'ab',
-  address: 'cd'
+  id: 'dummy',
+  name: '',
+  address: ''
 };
 
-const MainMap = props => {
+const MainMap = () => {
   const [position, setPosition] = useState([52.403596, 16.950051]);
+  const [zoom, setZoom] = useState(16);
   const [isPopupActive, setIsPopupActive] = useState(false);
   const [currentPopup, setCurrentPopup] = useState(initialPopup);
 
   const openPopup = id => {
     if (currentPopup.id === id) {
+      setZoom(16);
       setIsPopupActive(false);
       setTimeout(() => setCurrentPopup(initialPopup), 200);
     } else {
       const marker = dummyMarkers.find(marker => marker.id === id);
       setCurrentPopup(marker);
+      setZoom(17);
       setPosition(marker.position);
       if (!isPopupActive) setIsPopupActive(true);
     }
   };
 
   return (
-    <Map center={position} zoom={16} zoomControl={false}>
+    <Map
+      center={position}
+      zoom={zoom}
+      zoomControl={false}
+      onmoveend={e => setPosition(e.target.getCenter())}
+      onzoomend={e => setZoom(e.target.getZoom())}
+    >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {dummyMarkers.map(marker => (
         <Marker
