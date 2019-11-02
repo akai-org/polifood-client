@@ -22,7 +22,6 @@ const App = () => {
       <SearchBar toggleModal={toggleModal} />
       <NavBar />
       <FilterModal modalData={{ isVisible: isModalOpen, toggleModal }} />
-      <MenuBlock menuData={menuData} />
     </div>
   );
 };
