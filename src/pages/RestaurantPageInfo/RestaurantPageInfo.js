@@ -7,7 +7,7 @@ import BackButton from '../../components/BackButton/BackButton';
 
 export default function RestaurantInfoPage() {
   return (
-    <div className="RestaurantPageInfo">
+    <div>
       <img src={RestaurantPicture} alt="" className="restaurant-picture"/>
       
       <div className="restaurant-info-content">

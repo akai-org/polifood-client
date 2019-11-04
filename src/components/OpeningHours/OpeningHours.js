@@ -34,7 +34,7 @@ export default function OpeningHours (props) {
         </li>
       </ol>
 
-      <div class="closing-soon-info">
+      <div className="closing-soon-info">
         Dzisiaj wkrótce zamknięcie
       </div>
     </div>

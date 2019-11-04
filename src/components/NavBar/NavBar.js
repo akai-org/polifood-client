@@ -14,7 +14,7 @@ const NavBar = () => {
       <Link to="/restaurant-info">
         <img src={navOption2} alt="icon-2" className="navbar__icon" />
       </Link>
-      <Link>
+      <Link to="/">
         <img src={navOption3} alt="icon-3" className="navbar__icon" />
       </Link>
     </div>
