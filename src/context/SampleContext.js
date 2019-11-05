@@ -38,7 +38,7 @@ const anotherAction = dispatch => () => {
 };
 
 // return Context and Provider specific for this context, then add new Provider to DataContextWrapper
-export default { Context, Provider } = createDataContext(
+export const { Context, Provider } = createDataContext(
   sampleReducer,
   { sampleAction, anotherAction },
   []
