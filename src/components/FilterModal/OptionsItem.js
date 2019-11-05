@@ -1,11 +1,12 @@
 import React from 'react';
 
 const OptionsItem = ({ itemValue, ifSelected, selectHandler }) => {
+  const classes = [
+    'options-item',
+    ifSelected && 'options-item--selected'
+  ].filter(item => item);
   return (
-    <span
-      className={`options-item${ifSelected ? ' options-item--selected' : ''}`}
-      onTouchEnd={selectHandler}
-    >
+    <span className={classes.join(' ')} onTouchEnd={selectHandler}>
       {itemValue.charAt(0).toUpperCase() + itemValue.slice(1)}
     </span>
   );
