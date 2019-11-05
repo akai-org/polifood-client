@@ -1,0 +1,16 @@
+.opening-hours-list {
+  list-style-type: none;
+}
+
+.opening-hours-element {
+  display: flex;
+  justify-content: space-between;
+}
+
+.closing-soon-info {
+  color: #d18d49;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
