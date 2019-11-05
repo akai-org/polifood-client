@@ -3,7 +3,7 @@ import './MenuBlock.scss';
 
 import MenuCard from './MenuCard';
 
-const MenuBlock = ({ menuData }) => {
+const MenuBlock = ({ menuData = [] } = {}) => {
   // function to choose only 3 random/first types of food
   const chooseThreeTypes = menuData => menuData.slice(0, 3);
 
