@@ -1,0 +1,17 @@
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  border-radius: 100%;
+  background-color: #ffffff;
+
+  width: 35px;
+  height: 35px;
+}
+
+.button-image {
+  width: inherit;
+  position: relative;
+  padding: 10px;
+}
