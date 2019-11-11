@@ -6,17 +6,19 @@ import navOption2 from '../../assets/icons/nav-option-2.svg';
 import navOption3 from '../../assets/icons/nav-option-3.svg';
 
 const NavBar = () => {
+  const links = [
+    { to: '/', src: navOption1, alt: 'icon-1' },
+    { to: '/restaurant-info', src: navOption2, alt: 'icon-2' },
+    { to: '/', src: navOption3, alt: 'icon-3' }
+  ];
+
   return (
     <div className="navbar">
-      <Link to="/">
-        <img src={navOption1} alt="icon-1" className="navbar__icon" />
-      </Link>
-      <Link to="/places">
-        <img src={navOption2} alt="icon-2" className="navbar__icon" />
-      </Link>
-      <Link to="/favourites">
-        <img src={navOption3} alt="icon-3" className="navbar__icon" />
-      </Link>
+      {links.map(link => (
+        <Link to={link.to}>
+          <img src={link.src} alt={link.alt} className="navbar__icon" />
+        </Link>
+      ))}
     </div>
   );
 };
