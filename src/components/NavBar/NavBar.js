@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Svg from 'react-inlinesvg';
 import './NavBar.scss';
 import navOption1 from '../../assets/icons/nav-option-1.svg';
 import navOption2 from '../../assets/icons/nav-option-2.svg';
@@ -11,21 +12,16 @@ const links = [
   { to: '/', src: navOption3, alt: 'icon-3' }
 ];
 
-function toggleNavBarEntry() {
-
-}
-
 const NavBar = () => {
-  const [activeEntryIndex, setActiveEntry] = useState(0);
+  const [activeEntryIndex, setActiveEntry] = useState(1);
 
   return (
     <div className="navbar">
       {links.map((link, index) => (
         <Link to={link.to} key={index}>
-          <img
+          <Svg
             src={link.src}
-            alt={link.alt}
-            className={`navbar__icon ${activeEntryIndex == index ? 'navbar__active' : ''}`}
+            className={`navbar__icon ${activeEntryIndex === index ? 'navbar__active' : ''}`}
             onClick={() => setActiveEntry(index)}
           />
         </Link>

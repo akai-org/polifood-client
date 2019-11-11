@@ -20,7 +20,7 @@
     height: 30px;
   }
 
-  &__active {
-    background-color: red;
+  &__active path {
+    fill: red;
   }
 }
