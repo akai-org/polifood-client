@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MainMap from '../components/Map/MainMap';
+import MainMap from '../components/Map/MainMap/MainMap';
 import SearchBar from '../components/SearchBar/SearchBar';
 import FilterModal from '../components/FilterModal/FilterModal';
 

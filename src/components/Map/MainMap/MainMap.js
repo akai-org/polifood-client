@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
-import PlacePopup from './PlacePopup/PlacePopup';
+import PlacePopup from '../PlacePopup/PlacePopup';
 import 'leaflet/dist/leaflet.css';
+import './MainMap.scss';
 
 const customIcon = new L.Icon({
-  iconUrl: require('../../assets/icons/marker-pin.svg'),
-  iconRetinaUrl: require('../../assets/icons/marker-pin.svg'),
+  iconUrl: require('../../../assets/icons/marker-pin.svg'),
+  iconRetinaUrl: require('../../../assets/icons/marker-pin.svg'),
   iconAnchor: [29.5, 60],
   iconSize: [60, 60]
 });
@@ -59,6 +60,7 @@ const MainMap = () => {
       zoomControl={false}
       onmoveend={e => setPosition(e.target.getCenter())}
       onzoomend={e => setZoom(e.target.getZoom())}
+      className="map"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {dummyMarkers.map(marker => (
