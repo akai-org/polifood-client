@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       {links.map((link, index) => (
-        <Link to={link.to}>
+        <Link to={link.to} key={index}>
           <img
             src={link.src}
             alt={link.alt}
