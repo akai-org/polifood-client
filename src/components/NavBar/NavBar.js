@@ -2,18 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Svg from 'react-inlinesvg';
 import './NavBar.scss';
-import navOption1 from '../../assets/icons/nav-option-1.svg';
-import navOption2 from '../../assets/icons/nav-option-2.svg';
-import navOption3 from '../../assets/icons/nav-option-3.svg';
+import mapIcon from '../../assets/icons/nav/map.svg';
+import placesListIcon from '../../assets/icons/nav/list.svg';
+import favouritePlacesIcon from '../../assets/icons/nav/favourite.svg';
 
 const links = [
-  { to: '/', src: navOption1, alt: 'icon-1' },
-  { to: '/restaurant-info', src: navOption2, alt: 'icon-2' },
-  { to: '/', src: navOption3, alt: 'icon-3' }
+  { to: '/', src: mapIcon },
+  { to: '/restaurant-info', src: placesListIcon },
+  { to: '/', src: favouritePlacesIcon }
 ];
 
 const NavBar = () => {
-  const [activeEntryIndex, setActiveEntry] = useState(1);
+  const [activeEntryIndex, setActiveEntry] = useState(0);
 
   return (
     <div className="navbar">
