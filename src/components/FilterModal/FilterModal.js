@@ -36,7 +36,7 @@ const FilterModal = ({ modalData }) => {
 
   return (
     <>
-      <div className={bgClasses.join(' ')}></div>
+      <div onTouchEnd={toggleModal} className={bgClasses.join(' ')}></div>
       <div className={filtersClasses.join(' ')}>
         <h1 className="filters__header">Filters</h1>
         <div className="filters__options">
