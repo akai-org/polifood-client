@@ -53,7 +53,7 @@ const mapReducer = (state, action) => {
     case 'close-popup':
       return {
         ...state,
-        mapZoom: 16,
+        mapZoom: state.mapZoom > 16 ? 16 : state.mapZoom,
         popupActive: false
       };
     default:
