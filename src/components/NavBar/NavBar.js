@@ -9,20 +9,19 @@ import favouritePlacesIcon from '../../assets/icons/nav/favourite.svg';
 const links = [
   { to: '/', src: mapIcon },
   { to: '/restaurant-info', src: placesListIcon },
-  { to: '/', src: favouritePlacesIcon }
+  { to: '/favourite-places', src: favouritePlacesIcon }
 ];
 
-const NavBar = () => {
-  const [activeEntryIndex, setActiveEntry] = useState(0);
-
+const NavBar = props => {
   return (
     <div className="navbar">
       {links.map((link, index) => (
         <Link to={link.to} key={index}>
           <Svg
             src={link.src}
-            className={`navbar__icon ${activeEntryIndex === index ? 'navbar__active' : ''}`}
-            onClick={() => setActiveEntry(index)}
+            className={`navbar__icon ${
+              link.to === props.location.pathname ? 'navbar__active' : ''
+            }`}
           />
         </Link>
       ))}
@@ -30,4 +29,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default withRouter(props => <NavBar {...props} />);
