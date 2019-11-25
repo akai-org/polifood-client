@@ -4,7 +4,7 @@ import { useTransition, animated } from 'react-spring';
 
 import './App.scss';
 import MapPage from './pages/Map/MapPage';
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RestaurantPageInfo from './pages/RestaurantPageInfo/RestaurantPageInfo';
 import NavBar from './components/NavBar/NavBar';
 import Listing from './pages/Listing/Listing';
