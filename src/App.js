@@ -4,6 +4,7 @@ import { useTransition, animated } from 'react-spring';
 
 import './App.scss';
 import MapPage from './pages/Map/MapPage';
+import NotFoundPage from './pages/NotFoundPage';
 import RestaurantPageInfo from './pages/RestaurantPageInfo/RestaurantPageInfo';
 import NavBar from './components/NavBar/NavBar';
 import Listing from './pages/Listing/Listing';
@@ -26,7 +27,8 @@ export default function App() {
     { path: '/places/:id', component: RestaurantPageInfo },
     { path: '/places', component: Listing },
     { path: '/favourites', component: Favourites },
-    { path: '/', component: MapPage }
+    { path: '/', component: MapPage, exact: true },
+    { path: '/', component: NotFoundPage }
   ];
 
   return (
