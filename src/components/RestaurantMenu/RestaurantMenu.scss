@@ -1,0 +1,22 @@
+.dishes-list,
+.categories-list {
+  list-style-type: none;
+}
+
+.category {
+  margin-top: 20px;
+}
+
+.category-name {
+  margin: 5px 0;
+  color: #41d28d;
+}
+
+.dish {
+  display: flex;
+  flex-direction: space-between;
+}
+
+.dish-name {
+  flex: 1;
+}
