@@ -4,7 +4,7 @@ import './RestaurantMenu.scss'
 export default function (props) {
   return (
     <div>
-      <h1>Menu</h1>
+      <h1 className="main-title">Menu</h1>
       <p>{props.restaurantName}</p>
 
       <ul className="categories-list">
@@ -14,7 +14,7 @@ export default function (props) {
             <ul className="dishes-list">
               {category.dishes.map((dish, dishIndex) => (
                 <li className="dish">
-                  <div class="dish-name">
+                  <div className="dish-name">
                     {dish.name}
                   </div>
                   <div>
