@@ -5,6 +5,7 @@ import RestaurantPicture from '../../assets/images/restaurant.jpg';
 import './RestaurantPageInfo.scss';
 import BackButton from '../../components/BackButton/BackButton';
 import MenuBlock from '../../components/MenuBlock/MenuBlock';
+import CommentsSection from '../../components/CommentsSection/CommentsSection';
 
 export default function RestaurantInfoPage() {
   return (
@@ -28,9 +29,7 @@ export default function RestaurantInfoPage() {
           <OpeningHours />
         </div>
         <MenuBlock />
-        <div className="comments">
-          <h3>Komentarze</h3>
-        </div>
+          <CommentsSection />
       </div>
 
       <BackButton />
