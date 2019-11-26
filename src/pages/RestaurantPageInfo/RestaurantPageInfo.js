@@ -5,8 +5,9 @@ import RestaurantPicture from '../../assets/images/restaurant.jpg';
 import './RestaurantPageInfo.scss';
 import BackButton from '../../components/BackButton/BackButton';
 import MenuBlock from '../../components/MenuBlock/MenuBlock';
+import withAbsoluteWrapper from '../../components/AbsoluteWrapper/AbsoluteWrapper';
 
-export default function RestaurantInfoPage() {
+function RestaurantInfoPage() {
   return (
     <div>
       <img src={RestaurantPicture} alt="" className="restaurant-picture" />
@@ -37,3 +38,5 @@ export default function RestaurantInfoPage() {
     </div>
   );
 }
+
+export default withAbsoluteWrapper(RestaurantInfoPage);
