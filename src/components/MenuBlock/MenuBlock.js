@@ -1,13 +1,12 @@
 import React from 'react';
 import './MenuBlock.scss';
-
+import menuData from './menuData';
 import MenuCard from './MenuCard';
 
-const MenuBlock = ({ menuData = [] } = {}) => {
-  // function to choose only 3 random/first types of food
-  const chooseThreeTypes = menuData => menuData.slice(0, 3);
+const MenuBlock = () => {
+  // const chooseThreeTypes = menuData => menuData.slice(0, 3);
 
-  const threeTypes = chooseThreeTypes(menuData);
+  const threeTypes = menuData.slice(0, 3);
 
   return (
     <>
