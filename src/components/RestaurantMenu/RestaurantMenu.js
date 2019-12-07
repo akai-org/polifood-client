@@ -17,6 +17,7 @@ export default function (props) {
                   <div className="dish-name">
                     {dish.name}
                   </div>
+                  <div className="dots"></div>
                   <div>
                     {dish.price} {dish.currency}
                   </div>

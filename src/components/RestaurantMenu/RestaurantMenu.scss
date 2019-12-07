@@ -1,3 +1,5 @@
+@import '../../assets/styles/colors';
+
 .main-title {
   margin: 5px 0;
 }
@@ -21,6 +23,8 @@
   flex-direction: space-between;
 }
 
-.dish-name {
+.dots {
   flex: 1;
+  border-bottom: 2px dotted $mainFont;
+  margin: 3px 5px;
 }
