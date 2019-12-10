@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
-
 import './App.scss';
 import MapPage from './pages/Map/MapPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -10,7 +9,6 @@ import NavBar from './components/NavBar/NavBar';
 import Listing from './pages/Listing/Listing';
 import Favourites from './pages/Favourites/Favourites';
 import Menu from './pages/Menu/Menu';
-
 import DataContextWrapper from './context/DataContextWrapper';
 
 export default function App() {
