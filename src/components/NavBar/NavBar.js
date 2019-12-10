@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Svg from 'react-inlinesvg';
 import './NavBar.scss';
 import mapIcon from '../../assets/icons/nav/map.svg';
@@ -12,21 +12,21 @@ const links = [
   { to: '/favourite-places', src: favouritePlacesIcon }
 ];
 
-const NavBar = props => {
+const NavBar = () => {
   return (
     <div className="navbar">
-      {links.map((link, index) => (
-        <Link to={link.to} key={index}>
-          <Svg
-            src={link.src}
-            className={`navbar__icon ${
-              link.to === props.location.pathname ? 'navbar__active' : ''
-            }`}
-          />
-        </Link>
+      {links.map(link => (
+        <NavLink
+          exact={link.to === '/'}
+          to={link.to}
+          key={link.to}
+          activeClassName="navbar__active"
+        >
+          <Svg src={link.src} className="navbar__icon" />
+        </NavLink>
       ))}
     </div>
   );
 };
 
-export default withRouter(props => <NavBar {...props} />);
+export default NavBar;
