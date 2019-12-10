@@ -1,0 +1,6 @@
+<svg id="Component_3_1" data-name="Component 3 – 1" xmlns="http://www.w3.org/2000/svg" width="32" height="61.953" viewBox="0 0 32 61.953">
+  <path id="iconmonstr-location-3" d="M20,0C11.6,0,4,6.806,4,15.2,4,27.69,16.754,29.01,20,48c3.246-18.99,16-20.31,16-32.8C36,6.806,28.4,0,20,0Zm0,22a6,6,0,1,1,6-6A6,6,0,0,1,20,22Z" transform="translate(-4 13.953)" fill="#49d18f" opacity="0.9"/>
+  <g id="heart" transform="translate(9)">
+    <path id="Union_1" data-name="Union 1" d="M2,4.426C2-.635,7.781-1.262,9.18,2.065c1.408-3.344,7.18-2.671,7.18,2.362,0,2.572-1.831,5.993-7.18,9.481C3.831,10.419,2,7,2,4.426Zm8.221-1.845.3-.393A4.132,4.132,0,0,0,10.221,2.581Z" transform="translate(-2 0)" fill="#49d18f" opacity="0.9"/>
+  </g>
+</svg>
