@@ -8,8 +8,8 @@ import favouritePlacesIcon from '../../assets/icons/nav/favourite.svg';
 
 const links = [
   { to: '/', src: mapIcon },
-  { to: '/restaurant-info', src: placesListIcon },
-  { to: '/favourite-places', src: favouritePlacesIcon }
+  { to: '/places', src: placesListIcon },
+  { to: '/favourites', src: favouritePlacesIcon }
 ];
 
 const NavBar = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
-import { useTransition, animated } from 'react-spring';
+import { Route, Switch } from 'react-router-dom';
+
 import './App.scss';
 import MapPage from './pages/Map/MapPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -12,14 +12,6 @@ import Menu from './pages/Menu/Menu';
 import DataContextWrapper from './context/DataContextWrapper';
 
 export default function App() {
-  const location = useLocation();
-
-  const transitions = useTransition(location, location => location.pathname, {
-    from: { transform: 'translate(100%, 0)' },
-    enter: { transform: 'translate(0%, 0)' },
-    leave: { transform: 'translate(-100%, 0)' }
-  });
-
   const routes = [
     { path: '/places/:id/menu', component: Menu },
     { path: '/places/:id', component: RestaurantPageInfo },
@@ -31,15 +23,11 @@ export default function App() {
 
   return (
     <DataContextWrapper>
-      {transitions.map(({ item, props, key }) => (
-        <animated.div key={key} style={props}>
-          <Switch location={item}>
-            {routes.map(route => (
-              <Route key={route.path} {...route} />
-            ))}
-          </Switch>
-        </animated.div>
-      ))}
+      <Switch>
+        {routes.map(route => (
+          <Route key={route.path} {...route} />
+        ))}
+      </Switch>
       <NavBar />
     </DataContextWrapper>
   );
