@@ -1,40 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import Svg from 'react-inlinesvg';
 import './NavBar.scss';
-import navOption1 from '../../assets/icons/nav-option-1.svg';
-import navOption2 from '../../assets/icons/nav-option-2.svg';
-import navOption3 from '../../assets/icons/nav-option-3.svg';
-import navOption1Active from '../../assets/icons/nav-option-1-active.svg';
-import navOption2Active from '../../assets/icons/nav-option-2-active.svg';
-import navOption3Active from '../../assets/icons/nav-option-3-active.svg';
+import mapIcon from '../../assets/icons/nav/map.svg';
+import placesListIcon from '../../assets/icons/nav/list.svg';
+import favouritePlacesIcon from '../../assets/icons/nav/favourite.svg';
+
+const links = [
+  { to: '/', src: mapIcon },
+  { to: '/places', src: placesListIcon },
+  { to: '/favourites', src: favouritePlacesIcon }
+];
 
 const NavBar = () => {
   return (
     <div className="navbar">
-      <Link to="/">
-        {window.location.pathname === '/' ? (
-          <img src={navOption1Active} alt="icon-1" className="navbar__icon" />
-        ) : (
-          <img src={navOption1} alt="icon-1" className="navbar__icon" />
-        )}
-      </Link>
-      <Link to="/places">
-        {window.location.pathname === '/places' ? (
-          <img src={navOption2Active} alt="icon-2" className="navbar__icon" />
-        ) : (
-          <img src={navOption2} alt="icon-2" className="navbar__icon" />
-        )}
-      </Link>
-      <Link to="/favourites">
-        {window.location.pathname === '/favourites' ? (
-          <img src={navOption3Active} alt="icon-3" className="navbar__icon" />
-        ) : (
-          <img src={navOption3} alt="icon-3" className="navbar__icon" />
-        )}
-      </Link>
+      {links.map(link => (
+        <NavLink
+          exact={link.to === '/'}
+          to={link.to}
+          key={link.to}
+          activeClassName="navbar__active"
+        >
+          <Svg src={link.src} className="navbar__icon" />
+        </NavLink>
+      ))}
     </div>
   );
 };
 
-export default withRouter(NavBar);
+export default NavBar;
