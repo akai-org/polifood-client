@@ -15,31 +15,30 @@ const RestaurantThumb = ({
   distance,
   favourite
 }) => {
+  // waiting for backend...
+  function opening(opened) {
+    const values = {
+      'Wkrótce zamknięcie': 'close-soon',
+      Otwarte: 'opened',
+      Zamknięte: 'closed'
+    };
+    return values[opened];
+  }
+
+  function howClose(distance) {
+    return distance < 1 ? `${distance * 1000}m` : `${distance}km`;
+  }
+
   return (
     <div className="restaurant-thumb">
-      {favourite ? (
-        <img
-          className="favourite"
-          src={favouriteLabel}
-          alt="favourite label"
-        ></img>
-      ) : (
-        <div></div>
+      {favourite && (
+        <img className="favourite" src={favouriteLabel} alt="favourite label" />
       )}
       <div className="row">
         <div className="col">
           <h3 className="place-name">{name}</h3>
           <div className="place-address">{address}</div>
-          <div
-            className={
-              '' +
-              (open === 'Wkrótce zamknięcie' ? 'close-soon' : '') +
-              (open === 'Otwarte' ? 'opened' : '') +
-              (open === 'Zamknięte' ? 'closed' : '')
-            }
-          >
-            {open}
-          </div>
+          <div className={opening(open)}>{open}</div>
         </div>
         <div className="col icons">
           <div className="restaurant-current-info">
@@ -48,11 +47,7 @@ const RestaurantThumb = ({
           </div>
           <div className="restaurant-current-info">
             <img className="icon" src={walk} alt="walk" />
-            {distance < 1 ? (
-              <h3 className="current-info">{distance * 1000}m</h3>
-            ) : (
-              <h3 className="current info">{distance}km</h3>
-            )}
+            <h3 className="current info">{howClose(distance)}</h3>
           </div>
         </div>
       </div>
