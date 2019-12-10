@@ -2,6 +2,7 @@ import React from 'react';
 import './MenuBlock.scss';
 import menuData from './menuData';
 import MenuCard from './MenuCard';
+import RestaurantMenu from '../RestaurantMenu/RestaurantMenu';
 
 const MenuBlock = () => {
   // const chooseThreeTypes = menuData => menuData.slice(0, 3);
@@ -21,6 +22,39 @@ const MenuBlock = () => {
           ))}
         </div>
       </div>
+
+      <RestaurantMenu
+        restaurantName="Stołówka studencka"
+        menu={[
+          {
+            name: 'Zupy',
+            dishes: [
+              {name: 'gulaszowa', price: '7', currency: 'PLN'},
+              {name: 'pomidorowa', price: '6', currency: 'PLN'},
+              {name: 'krupnik', price: '10', currency: 'PLN'},
+              {name: 'krem z kalafiora', price: '11', currency: 'PLN'}
+            ]
+          },
+          {
+            name: 'Naleśniki',
+            dishes: [
+              {name: 'gulaszowa', price: '7', currency: 'PLN'},
+              {name: 'pomidorowa', price: '6', currency: 'PLN'},
+              {name: 'krupnik', price: '10', currency: 'PLN'},
+              {name: 'krem z kalafiora', price: '11', currency: 'PLN'}
+            ]
+          },
+          {
+            name: 'Dania orientalne',
+            dishes: [
+              {name: 'gulaszowa', price: '7', currency: 'PLN'},
+              {name: 'pomidorowa', price: '6', currency: 'PLN'},
+              {name: 'krupnik', price: '10', currency: 'PLN'},
+              {name: 'krem z kalafiora', price: '11', currency: 'PLN'}
+            ]
+          }
+        ]}
+      />
     </>
   );
 };
